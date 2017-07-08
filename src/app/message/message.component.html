@@ -1,0 +1,13 @@
+<li class="message {{direction}} appeared">
+    <!--<div class="avatar">{{user}}</div>-->
+    <div class="text_wrapper">
+        <div class="text" *ngIf="message">
+            {{message}}
+        </div>
+
+        <img *ngIf="url" [src]="url" (load)="onImageLoad(event = $event)"/>
+        <div class="time">
+            {{time}}
+        </div>
+    </div>
+</li>

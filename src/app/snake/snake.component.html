@@ -1,0 +1,11 @@
+<h1 [hidden]="finish">Play Snake Game</h1>
+<div id="result" [hidden]="!finish">
+    Thank you for playing game.
+    <br />
+    <b>
+        Your Score : {{SCORE}}
+    </b>
+    <br /><br />
+    <input type='button' value='Play Again' (click)='restart();' />
+</div>
+<canvas id="snakeBox" width="450" height="300" [hidden]="finish">Sorry your browser does not support HTML5</canvas>

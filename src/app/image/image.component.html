@@ -1,0 +1,36 @@
+<div class="chat_window">
+    <div class="top_menu">
+
+        <div class="title">
+            Chat
+            <span class="spinner" [hidden]="!isSearching">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </span>
+        </div>
+
+
+    </div>
+    <ul class="messages">
+        <app-message
+            [message] = "message.message"
+            [user] = "message.user"
+            [direction] = "message.direction"
+            [url] = "message.url"
+            [time] = "message.time"
+            (imageLoaded) = "scrollDown()"
+            *ngFor="let message of messages">Vaibhav</app-message>
+    </ul>
+    <div class="bottom_wrapper clearfix">
+        <div class="message_input_wrapper">
+            <input id="query_input" class="message_input" placeholder="What image can I show you today? or you can click audio to speak." [(ngModel)]="queryParameter" (keyup.enter)="onSubmit()" [disabled]="isSearching"/>
+
+            <div class="audio" (click)="audioSearch()"></div>
+        </div>
+        <div class="send_message" (click)="onSubmit()">
+            <div class="icon"></div>
+            <div class="text">Send</div>
+        </div>
+    </div>
+</div>
